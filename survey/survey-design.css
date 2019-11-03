@@ -1,0 +1,56 @@
+body {
+  background-color: yellow;
+  font-family: arial;
+  box-sizing: border-box;
+}
+
+#title {
+  text-align: center;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+.red-font {
+  color: red;
+}
+
+#main {
+  margin: auto;
+  background-color: white;
+  border: solid 2px red;
+  border-radius: 1.5em;
+  padding: 0 2em 1em 2em;
+  box-shadow: 5px 5px orange;
+  width: 70%;
+  justify-content: center;
+}
+
+#eating {
+  width: 97%;
+}
+
+#meals {
+  width: 97%;
+}
+
+#comments {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+
+#title {
+  font-size: 25px;
+}
+
+#eating{
+    display: flex;
+    flex-direction: column;
+}
+
+#meals{
+    display: flex;
+    flex-direction: column;
+}
+
+}
