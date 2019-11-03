@@ -1,0 +1,93 @@
+body {
+  box-sizing: border-box;
+  background: linear-gradient(0deg, blue, white);
+}
+
+#main {
+  margin:auto;
+  width: 70%;
+  border-radius: 1.5em;
+  background-color: white;
+  color: #0000FF;
+  padding: 1em;
+  font-family: arial;
+  border: solid 1px gray;
+  box-shadow: 3px 3px gray;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  padding: 0.5em;
+  padding-top: 0;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#img-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#image {
+  display: block;
+  margin-bottom: 0;
+  border-radius: 1em 1em 0 0;
+  width: 70%;
+  max-width: 512px;
+  padding-bottom: 0;
+  height: auto;
+  align-self: center;
+}
+
+#img-caption {
+  display: block;
+  margin-top: 0;
+  border-radius: 0 0 1em 1em;
+  width: 70%;
+  max-width: 512px;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 0.3em 0 0.3em 0;
+  text-align: center;
+  align-self: center;
+}
+
+#tribute-link {
+  display: inline-block;
+  font-size: 17px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+#tribute-link:hover {
+  color: white;
+  background-color: gray;
+  font-style: italic;
+}
+
+#footer {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #img-caption {
+    font-size: 15px;
+  }
+
+  article {
+    font-size: 13px;
+  }
+
+}
+  
