@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="tech-design.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech-doc</title>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<body>
+  <!--    User Story #8: I can see a nav element with a corresponding id="navbar". -->
+  <!--    User Story #9: The navbar element should contain one header element which contains text that describes the topic of the technical documentation. -->
+  <!--    User Story #11: The header element in the navbar must come before any link (a) elements in the navbar. -->
+  <!--    User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section. -->
+  <!--    User Story #12: Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world"). -->
+  <!--    User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", the page navigates to a section element that has that id and contains the corresponding header. -->
+
+  <header id="nav">
+    <div id="mobile">
+    </div>
+    <nav id="navbar">
+      <header id="description">SQL Query Examples</header>
+      <a href="#Simple_Query" class="nav-link">Simple Query</a>
+      <a href="#Query_with_column_selection" class="nav-link">Query with column selection</a>
+      <a href="#Query_with_unique_values" class="nav-link">Query with unique values</a>
+      <a href="#Query_with_renaming" class="nav-link">Query with renaming</a>
+      <a href="#Query_with_filter" class="nav-link">Query with filter</a>
+      <a href="#Query_with_filter_for_content" class="nav-link">Query with filter for content</a>
+      <a href="#Query_with_filter_and_sort" class="nav-link">Query with filter and sort</a>
+      <a href="#Query_with_linked_tables" class="nav-link">Query with linked tables</a>
+      <a href="#Left_outer_composite" class="nav-link">Left outer composite</a>
+      <a href="#Grouping_with_aggregate_functions" class="nav-link">Grouping with aggregate functions</a>
+      <a href="#Summary" class="nav-link">Summary</a>
+    </nav>
+  </header>
+  <!--    User Story #1: I can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation). -->
+  <main id="main-doc">
+
+    <!--    User Story #2: Within the #main-doc element, I can see several section elements, each with a class of main-section. There should be a minimum of 5. -->
+    <!--    User Story #4: Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding id="JavaScript_and_Java"). -->
+    <section id="Simple_Query" class="main-section">
+      <!--    User Story #3: The first element within each .main-section should be a header element which contains text that describes the topic of that section. -->
+      <header>
+        Simple Query
+      </header>
+      <code><span>SELECT</span> *<br><span>FROM</span> Student;</code>
+      <p>lists all columns and all rows of the Student table.</p>
+    </section>
+
+    <section id="Query_with_column_selection" class="main-section">
+      <header>
+        Query with column selection
+      </header>
+      <code><span>SELECT</span> VorlNr, Titel<br><span>FROM</span> Vorlesung;</code>
+      <p>lists the columns Preliminary and Title of all the lines of the Lecture table.</p>
+    </section>
+
+    <section id="Query_with_unique_values" class="main-section">
+      <header>
+        Query with unique values
+      </header>
+      <code><span>SELECT DISTINCT</span> MatrNr<br><span>FROM</span> hört;</code>
+      <p>only lists different entries of the column MatrNr from the table stops. This shows the student numbers of all students who are listening to at least one lecture, whereby multiple occurring student numbers are issued only once.</p>
+    </section>
+
+    <section id="Query_with_renaming" class="main-section">
+      <header>
+        Query with renaming
+      </header>
+      <code><span>SELECT</span> MatrNr <span>AS</span> Matrikelnummer, Name<br><span>FROM</span> Student;</code>
+      <p>lists the columns MatrNr and Name of all rows of the Student table. MatrNr is listed as a student number in the display result.</p>
+    </section>
+
+    <section id="Query_with_filter" class="main-section">
+      <header>
+        Query with filter
+      </header>
+      <code><span>SELECT</span> VorlNr, Titel<br><span>FROM</span> Vorlesung<br><span>WHERE</span> Titel = 'ET';</code>
+      <p>lists the VorlNr and title of all lines of the lecture table whose title is 'ET'.</p>
+      <p>The frequently used statement structured in this way is also called "SFW block" after the initial letters.</p>
+    </section>
+
+    <section id="Query_with_filter_for_content" class="main-section">
+      <header>
+        Query with filter for content
+      </header>
+      <code><span>SELECT</span> Name<br><span>FROM</span> Student<br><span>WHERE</span> Name LIKE 'F%';</code>
+      <p>lists the names of all students whose name starts with F (in the example: Spruce and Lazy).</p>
+      <p>LIKE can be used with various placeholders: _ stands for any single character,% stands for any character string. Some database systems offer other such wildcard characters, such as for character sets.</p>
+    </section>
+
+    <section id="Query_with_filter_and_sort" class="main-section">
+      <header>
+        Query with filter and sort
+      </header>
+      <code><span>SELECT</span> Vorname, Name, StrasseNr, Plz, Ort<br><span>FROM</span> Student<br><span>WHERE</span> Plz = '20095'<br><span>ORDER BY</span> Name;</code>
+      <p>lists first name, surname, streetnumber, plz and place of all students from the given postal code area sorted by name.</p>
+    </section>
+
+    <section id="Query_with_linked_tables" class="main-section">
+      <header>
+        Query with linked tables
+      </header>
+      <code><span>SELECT</span> Vorlesung.VorlNr, Vorlesung.Titel, Professor.PersNr, Professor.Name<br><span>FROM</span> Professor, Vorlesung<br><span>WHERE</span> Professor.PersNr = Vorlesung.PersNr;</code>
+      <p>The enumeration after FROM specifies the data sources: at this point, several tables can be linked together using so-called JOINs, so that data from different tables is merged and displayed.</p>
+      <p>In this example, a natural inner join is used: All records from the Professor and Lecture tables that have the same value in the PersNr field. Professors without a lecture and lectures without a professor will not be displayed.</p>
+    </section>
+
+    <section id="Left_outer_composite" class="main-section">
+      <header>
+        Left outer composite
+      </header>
+      <code><span>SELECT</span> Vorlesung.VorlNr, Vorlesung.Titel, Professor.PersNr, Professor.Name<br><span>FROM</span> Professor <span>LEFT OUTER JOIN</span> Vorlesung<br><span>ON</span> Professor.PersNr = Vorlesung.PersNr;</code>
+      <p>returns all the records of the Professor table, and thus links all the records from both tables that have the same value in the PersNr field. Professors without a lecture are included, lectures without a professor are not included.</p>
+      <p>The following query returns only those records for which there is no matching record in the left outer composite (all professors who do not lecture):</p>
+      <code><span>SELECT</span> Professor.PersNr, Professor.Name<br><span>FROM</span> Professor <span>LEFT OUTER JOIN</span> Vorlesung<br><span>ON</span> Professor.PersNr = Vorlesung.PersNr<br><span>WHERE</span> Vorlesung.PersNr <span>IS NULL</span>;</code>
+      <p>The same can be achieved by means of a subquery:</p>
+      <code><span>SELECT</span> Professor.PersNr, Professor.Name<br><span>FROM</span> Professor<br><span>WHERE NOT EXISTS</span> (<span>SELECT * FROM</span> Vorlesung <span>WHERE</span> PersNr = Professor.PersNr);</code>
+    </section>
+
+    <section id="Grouping_with_aggregate_functions" class="main-section">
+      <header>
+        Grouping with aggregate functions
+      </header>
+      <code><span>SELECT COUNT</span>(Vorlesung.PersNr) <span>AS</span> Anzahl, Professor.PersNr, Professor.Name<br><span>FROM</span> Professor <span>LEFT OUTER JOIN</span> Vorlesung<br><span>ON</span> Professor.PersNr = Vorlesung.PersNr<br><span>GROUP BY</span> Professor.Name, Professor.PersNr;</code>
+      <p>counts the number of lectures per professor using the aggregate function COUNT.</p>
+      <p>Note: COUNT (Professor.PersNo) or COUNT (*) would be wrong (zero values ​​should not be counted).</p>
+    </section>
+
+    <section id="Summary" class="main-section">
+      <header>
+        Summary
+      </header>
+      <p>In summary, the key elements of a SQL SELECT query are as follows:</p>
+      <code><span>SELECT</span> [<span>DISTINCT</span>] Auswahlliste [<span>AS</span> Spaltenalias]<br><span>FROM</span> Quelle [ [<span>AS</span>] Tabellenalias]<br>[<span>WHERE</span> Where-Klausel]<br>[<span>GROUP BY</span> (Group-by-Attribut)+]<br>[<span>HAVING</span> Having-Klausel]<br>[<span>ORDER BY</span> (Sortierungsattribut [<span>ASC|DESC</span>])+];</code>
+      <p>Explanation:</p>
+      <ul>
+        <li>DISTINCT indicates that the same result tuple should be removed from the result relation. So each record is output only once, even if it occurs several times in the table. Otherwise, SQL returns a multi-set.</li>
+        <li>Selection list determines which columns of the source are to be output (* for all) and whether aggregate functions are to be used. As with all other enumerations, the individual elements are separated by commas.</li>
+        <li>Source indicates where the data comes from. You can specify relations and views and link them together as a Cartesian product or as a compound (JOIN, as of SQL-92). With the additional specification of a name, tuple variables can be filled, ie
+          relations for the query can be renamed (see examples).</li>
+        <li>Where clause specifies conditions, also called filters, under which the data should be output. In SQL, it is also possible to specify subqueries, so that SQL becomes strictly relationally complete.</li>
+        <li>Group-by-Attribute specifies whether different values ​​should be output as individual lines (GROUP BY = grouping) or the field values ​​of the lines by aggregations such as addition (SUM), average (AVG), minimum (MIN), maximum (MAX ) are summarized
+          to a result value that relates to the grouping.</li>
+        <li>Having clause is like the Where clause, except that the specified condition refers to the result of an aggregation function, for example, HAVING SUM (Amount)> 0.</li>
+        <li>Sort attribute: After ORDER BY, attributes are specified by which to sort. The default is ASC, which means ascending sort, DESC is descending sort.</li>
+      </ul>
+      <p>Set operators can be applied to multiple SELECT queries that have the same number of attributes and that match the data types of the attributes:</p>
+      <ul>
+        <li>UNION unites the result sets. In some implementations, duplicate result tuples are removed as in DISTINCT without the need to write "UNION DISTINCT".</li>
+        <li>UNION ALL combines the result sets. Multiple occurrence tuples are preserved. However, some implementations interpret "UNION" as "UNION ALL" and may not understand the "ALL" and will issue an error message.</li>
+        <li>EXCEPT returns the tuples contained in a first but not in a second result set. Repeated results tuples are removed.</li>
+        <li>MINUS is an analog operator like EXCEPT, which is alternatively used by some SQL dialects.</li>
+        <li>INTERSECT returns the intersection of two result sets. Repeated results tuples are removed.</li>
+      </ul>
+    </section>
+
+    <!--    User Story #5: The .main-section elements should contain at least 10 p elements total (not each). -->
+    <!--    User Story #6: The .main-section elements should contain at least 5 code elements total (not each). -->
+    <!--    User Story #7: The .main-section elements should contain at least 5 li items total (not each). -->
+
+  </main>
+
+</body>

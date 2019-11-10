@@ -1,0 +1,248 @@
+@import url(https://fonts.googleapis.com/css?family=McLaren);
+
+header,
+body {
+  color: black;
+  font-family: arial;
+  display: unset;
+  margin: unset;
+  padding: unset;
+  text-decoration: none;
+  background: linear-gradient(90deg, white, orange);
+}
+
+a {
+  display: inline-block;
+  background: linear-gradient(90deg, white);
+  text-decoration: none;
+  color: gray;
+  padding: 0em 0.5em 0em 0em;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:hover {
+  color: black;
+  transition: 0.3s ease-out;
+}
+
+/*    User Story #10: The height of the welcome section should be equal to the height of the viewport. */
+#welcome-section {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  font-family: McLaren, monospace;
+  padding-top: 2em;
+  margin-bottom: 30em;
+}
+
+h1 {
+  margin-top: 1em;
+  padding: 1em 2.5em;
+  font-size: 2.5em;
+}
+
+p {
+  margin-top: 1em;
+  padding: 0 3em;
+  font-size: 2em;
+}
+
+/*    User Story #11: The navbar should always be at the top of the viewport. */
+#navbar {
+  position: fixed;
+  display: block;
+  width: 100%;
+  padding: 0.2em;
+  top: 0px;
+  width: 100%;
+  background: linear-gradient(0deg, white, orange);
+  border-bottom: 4px solid black;
+  color: blue;
+  font-family: McLaren, arial;
+  font-size: 2.5em;
+  font-weight: bolder;
+  text-align: right;
+}
+
+.grid-projects {
+  padding-top: 2em;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 13% 30% 14% 30% 13%;
+  grid-template-rows: 7% 30% 26% 30% 7%;
+}
+
+.project-tile {
+  display: flex;
+}
+
+#projects img {
+  width: 100%;
+  height: auto;
+  margin: 5em 0em;
+  border: 4px solid black;
+  border-radius: 50px 50px;
+  box-shadow: 15px 15px 17px gray;
+}
+
+#mypicture {
+  display: flex;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 25em;
+  width: 50vw;
+  max-width: 450px;
+  border-radius: 50% 50% 50% 50%;
+  border-radius: 50px 50px;
+  border: 4px solid black;
+  box-shadow: 15px 15px 17px gray;
+}
+
+#tribute-page {
+  width: auto;
+  grid-area: 2/2/3/3;
+}
+
+#survey-form {
+  width: auto;
+  grid-area: 2/4/3/5;
+}
+
+#product-page {
+  width: auto;
+  grid-area: 4/2/5/3;
+}
+
+#technical-documentation {
+  width: auto;
+  grid-area: 4/4/5/5;
+}
+
+h2 {
+  margin-top: 5em;
+  font-size: 1.4em;
+}
+
+#contact {
+  display: block;
+  width: 100%;
+  padding-top: 0.1em;
+  margin-bottom: 14em;
+  text-align: center;
+  font-size: 2em;
+}
+
+#name-input,
+#email-input,
+#message,
+#submit-button {
+  margin: 0.3em;
+  font-size: 1em;
+  width: 20em;
+  border: 4px solid black;
+  box-shadow: 15px 15px 17px gray;
+}
+
+#submit-button {
+  border-radius: 20px;
+}
+
+#link-container {
+  display: block;
+  margin-top: 4em;
+  text-align: center;
+}
+
+#profile-link {
+  margin-top: 3em;
+  background-color: silver;
+  border-radius: 20px;
+  border: 4px solid black;
+  box-shadow: 15px 15px 17px gray;
+  padding: 0.2em;
+  color: black;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-decoration: underline;
+}
+
+/*    User Story #9: My portfolio should have at least one media query. */
+@media (max-width: 800px) {
+
+  #navbar {
+    position: fixed;
+    display: block;
+    width: 100%;
+    padding: 0.2em;
+    top: 0px;
+    width: 100%;
+    font-family: McLaren, arial;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #welcome-section {
+    display: block;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    text-align: center;
+  }
+
+  #mypicture {
+    display: inline-block;
+    margin: 3em;
+    margin-bottom: 6em;
+    width: 15em;
+  }
+
+  .grid-projects {
+    display: inline-block;
+    padding-top: 20em;
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+  }
+
+  #profile-link {
+    display: inline-block;
+    max-width: 80%;
+    justify-content: center;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  h2 {
+    padding-top: 2em;
+  }
+
+  #contact {
+    display: block;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8em;
+  }
+
+  #name-input,
+  #email-input,
+  #message,
+  #submit-button {
+    margin: 0.4em;
+    font-size: 0.8em;
+    width: 70%;
+  }
+
+  #submit-button {
+    border-radius: 15px;
+    text-decoration: underline;
+    background-color: silver;
+    font-weight: bold;
+    font-size: 1em;
+   }
+}

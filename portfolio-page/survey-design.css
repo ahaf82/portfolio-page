@@ -1,5 +1,5 @@
 body {
-  background-color: yellow;
+  background: linear-gradient(120deg, white, limegreen);
   font-family: arial;
   box-sizing: border-box;
 }
@@ -10,18 +10,19 @@ body {
   font-size: 30px;
 }
 
-.red-font {
-  color: red;
+.green-font {
+  color: limegreen;
 }
 
 #main {
   margin: auto;
   background-color: white;
-  border: solid 2px red;
+  border: solid 2px darkgray;
   border-radius: 1.5em;
   padding: 0 2em 1em 2em;
-  box-shadow: 5px 5px orange;
+  box-shadow: 5px 5px darkgreen;
   width: 70%;
+  max-width: 500px;
   justify-content: center;
 }
 
@@ -52,5 +53,4 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 }

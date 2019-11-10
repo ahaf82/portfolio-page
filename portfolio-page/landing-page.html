@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="landing-design.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wonka Chocolate</title>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<body>
+  <!-- #1: My product landing page should have a header element with a corresponding id="header".  -->
+  <header id="header">
+    <!-- #2: I can see an image within the header element with a corresponding id="header-img". A company logo would make a good image here.-->
+    <img id="header-img" src="https://images-na.ssl-images-amazon.com/images/I/71yT10p-HyL._SX679_.jpg" alt="Wasserturm-Logo">
+    <!-- #3: Within the #header element I can see a nav element with a corresponding id="nav-bar".-->
+    <nav id="nav-bar">
+      <!-- #4: I can see at least three clickable elements inside the nav element, each with the class nav-link.-->
+      <a class="nav-link" href="#mobile-title">Video</a>
+      <a class="nav-link" href="#story">Story</a>
+      <a class="nav-link" href="#recipe">Recipe</a>
+      <a class="nav-link" href="#contact">Contact</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <div id="mobile-title">
+     <h1 id="title">Welcome to Wonka Chocolate</h1>
+    <div>
+    <div id="wonka-vid">
+      <!-- #6: I can watch an embedded product video with id="video".-->
+      <iframe id="video" width="auto" src="https://www.youtube.com/embed/7em4Hosc-dw" frameborder=0 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <section id="story">
+      <div class="mobile-h2">
+        <h2>Story</h2>
+      </div>
+      <p id="description">Charlie Bucket, a poor paperboy, wants to visit the Willy Wonkas famous chocolate factory.</p>
+      <p>He finds one of five hidden "Golden Tickets" in chocolate Wonka Bars and wins a factory tour together with his Grandpa and the other winners.</p>
+      <p>The next day, Wonka greets the ticket winners and leads them inside. The factory includes a candy land with a river of chocolate, edible mushrooms, gummy bears, candy canes, chocolate and more sweets. They see Wonka's workers, small men known as
+        Oompa-Loompas.</p>
+      <p>As the other winners are lost because of various accidents on tour only Charlie and his Grandpa remain.</p>
+      <p>Charlie asks about the fate of the other four kids, and Wonka swiftly assures him that that they will be restored to normal.</p>
+      <p>Wonka declares Charlie as the winner, and he reveals that the prize is actually the factory.</p>
+      <p>He had created the contest to find an heir worthy enough to be, and so Charlie and his family can immediately move in.</p>
+      <p>Charlie will therefore take over the factory business when Wonka retires.</p>
+    </section>
+
+    <section id="recipe">
+      <div class="mobile-h2">
+        <h2>Recipe</h2>
+      </div>
+      <h3>INGREDIENTS</h3>
+      <ul id="ingredients">
+        <li>1⁄2 cup margarine, softened</li>
+        <li>1 cup peanut butter</li>
+        <li>1⁄2 box powdered sugar</li>
+        <li>1 1⁄2 packages graham crackers</li>
+        <li>1 (12 ounce) package chocolate chips</li>
+        <li>2 tablespoons margarine or 1/4 cup milk</li>
+      </ul>
+      <br>
+      <h3>DIRECTIONS</h3>
+      <ul id="directions">
+        <li>Combine margarine, peanut butter, powdered sugar and graham crackers.</li>
+        <li>Press mixture in (8"x8") pan.</li>
+        <li>Melt chips and 2 tablespoons of margarine or milk.</li>
+        <li>Spread over graham cracker crust.</li>
+        <li>Refrigerate.</li>
+        <li>Cut when cool.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>For more information leave your email address:</h2>
+      <!-- #7: My landing page has a form element with a corresponding id="form".-->
+      <form id="form" action="mailto: a_h82@gmx.net" method="POST">
+        <!-- #8: Within the form, there is an input field with id="email" where I can enter an email address.-->
+        <!-- #9: The #email input field should have placeholder text to let the user know what the field is for.-->
+        <!-- #10: The #email input field uses HTML5 validation to confirm that the entered text is an email address-->
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <!-- #11: Within the form, there is a submit input with a corresponding id="submit".-->
+        <!-- #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit) that confirms the email address was entered and that it posted successfully.-->
+        <input id="submit" type="submit" value="Submit">
+      </form>
+    </section>
+
+  </main>
+
+  <!--  #5: When I click a .nav-link button in the nav element, I am taken to the corresponding section of the landing page.-->
+  <!--    User Story #13: The navbar should always be at the top of the viewport.-->
+  <!--    User Story #14: My product landing page should have at least one media query.-->
+  <!--    User Story #15: My product landing page should utilize CSS flexbox at least once.-->
+
+</body>
+
+</html>
