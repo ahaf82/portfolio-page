@@ -107,6 +107,7 @@ a:hover {
 }
 
 #story {
+  padding-top: 1.5em;
   text-align: center;
   font-family: arial;
 }
@@ -114,6 +115,11 @@ a:hover {
 #recipe,
 #directions {
   font-family: arial;
+}
+
+
+#recipe {
+  padding-top: 1.5em;
 }
 
 #form {
@@ -177,10 +183,6 @@ li {
   text-align: center;
   font-family: fantasy;
   font-size: 20px;
-}
-
-.mobile-h2 {
-  padding-top: 0.1em;
 }
 
 #email {
