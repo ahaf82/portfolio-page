@@ -1,0 +1,9 @@
+$primary-color: red;
+
+body {
+color: $primary-color;
+}
+
+blockquote {
+border-left: 3px solid $primary-color;
+}
