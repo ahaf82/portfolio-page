@@ -4,6 +4,10 @@
   padding: unset;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   font-size: 20px;
   font-family: arial;
@@ -111,7 +115,6 @@ code {
     font-size: 11px;
     height: auto;
 }
-
 
 section {
   display: block;

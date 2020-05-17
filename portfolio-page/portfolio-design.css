@@ -1,140 +1,247 @@
-@import url(https://fonts.googleapis.com/css?family=McLaren);
+@import url('https://fonts.googleapis.com/css?family=McLaren');
+@import url('https://fonts.googleapis.com/css?family=Georgia');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: Vollkorn, sans-serif;
+}
 
 header,
 body {
-  color: black;
-  font-family: arial;
   display: unset;
   margin: unset;
   padding: unset;
   text-decoration: none;
-  background: linear-gradient(90deg, white, orange);
 }
 
-a {
-  display: inline-block;
-  background: linear-gradient(90deg, white);
-  text-decoration: none;
-  color: gray;
-  padding: 0em 0.5em 0em 0em;
+.toggle{
+    width: 100%;
+    padding: 10px 20px;
+    height: 2em;
+    padding: 0.2em;
+    background-color: rgba(15, 32, 39, 0.87);
+    color: white;
+    font-size: 30px;
+    box-sizing: border-box;
+    display: none;
 }
 
-a:visited {
-  color: gray;
+nav {
+    width: 100%;
+    background: rgba(15, 32, 39, 0.87);
+    box-shadow: 0px 5px 5px rgba(58, 54, 54, 0.753);
+    position: fixed;
+    z-index: 1;
+    text-align: right;
 }
 
-a:hover {
-  color: black;
-  transition: 0.3s ease-out;
+nav ul {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    color: gray;
 }
 
-/*    User Story #10: The height of the welcome section should be equal to the height of the viewport. */
-#welcome-section {
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    font-family: Vollkorn, Sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: right;
+}
+
+nav ul li a:hover {
+    border-bottom: 4px solid cyan;
+    color: cyan;
+    text-decoration: none;
+    transition: 0.3s ease-in;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 18px;
+}
+
+
+#first-page{
+  height: 100vh;
+}
+
+#welcome {
   display: block;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
-  font-family: McLaren, monospace;
-  padding-top: 2em;
-  margin-bottom: 30em;
+  color:  black;
+  padding-top: 10vh;
 }
 
 h1 {
-  margin-top: 1em;
-  padding: 1em 2.5em;
-  font-size: 2.5em;
+  padding: 0.5em;
+  padding-bottom: 0em;
+  font-size: 2.3em;
+  font-weight: bolder;
 }
 
 p {
-  margin-top: 1em;
-  padding: 0 3em;
-  font-size: 2em;
+  margin: 0.5em;
+  margin-top: 0.3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  font-size: 1.8em;
 }
 
-/*    User Story #11: The navbar should always be at the top of the viewport. */
-#navbar {
-  position: fixed;
-  display: block;
+#pic {
   width: 100%;
-  padding: 0.2em;
-  top: 0px;
-  width: 100%;
-  background: linear-gradient(0deg, white, orange);
-  border-bottom: 4px solid black;
-  color: blue;
-  font-family: McLaren, arial;
-  font-size: 2.5em;
-  font-weight: bolder;
-  text-align: right;
-}
-
-.grid-projects {
-  padding-top: 2em;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 13% 30% 14% 30% 13%;
-  grid-template-rows: 7% 30% 26% 30% 7%;
-}
-
-.project-tile {
-  display: flex;
-}
-
-#projects img {
-  width: 100%;
-  height: auto;
-  margin: 5em 0em;
-  border: 4px solid black;
-  border-radius: 50px 50px;
-  box-shadow: 15px 15px 17px gray;
 }
 
 #mypicture {
-  display: flex;
+  display: block;
   margin: auto;
-  margin-top: 5em;
-  margin-bottom: 25em;
+  margin-top: 2em;
   width: 50vw;
-  max-width: 450px;
-  border-radius: 50% 50% 50% 50%;
-  border-radius: 50px 50px;
+  max-width: 210px;
+  border-radius: 30px 30px;
   border: 4px solid black;
   box-shadow: 15px 15px 17px gray;
 }
 
-#tribute-page {
-  width: auto;
-  grid-area: 2/2/3/3;
+#second-page {
+  padding-top: 15vh;
+  padding-bottom: 8vh;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(15, 32, 39, 0.87);
 }
 
-#survey-form {
-  width: auto;
-  grid-area: 2/4/3/5;
+#projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#product-page {
-  width: auto;
-  grid-area: 4/2/5/3;
+.grid-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 85px;
 }
 
-#technical-documentation {
-  width: auto;
-  grid-area: 4/4/5/5;
+.flip-card{
+    background-color: transparent;
+    width: 20vw;
+    height: 15vw;
+    perspective: 2000px;
+}
+
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+    border: 7px outset white;
+    border-radius: 10px 10px;
+}
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front{
+    background-color: #000000;
+    color: #fff;
+}
+
+.flip-card-back{
+    background-color: rgb(20, 33, 37);
+    color: white;
+    transform: rotateY(180deg);
+    line-height: 2.2;
+}
+
+.flip-card-text {
+    line-height: 1.5;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.button-project {
+    color: white;
+    padding: 1px 32px 1px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+.button-project:hover{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.image-project{
+    width: 20vw;
+    height: 15vw;
 }
 
 h2 {
-  margin-top: 5em;
+  margin-top: 2em;
   font-size: 1.4em;
+}
+
+#link-container {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+  span {
+    color: black;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-decoration: none;
+  }
 }
 
 #contact {
   display: block;
   width: 100%;
-  padding-top: 0.1em;
+  padding-top: 2em;
   margin-bottom: 14em;
   text-align: center;
   font-size: 2em;
+}
+
+#visit {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#footer-title {
+  font-weight: bolder;
+  font-size: 1.2em;
 }
 
 #name-input,
@@ -142,88 +249,299 @@ h2 {
 #message,
 #submit-button {
   margin: 0.3em;
-  font-size: 1em;
+  color: black;
+  text-decoration: none;
+  font-size: 0.8em;
+  font-family: Vollkorn, sans-serif;
   width: 20em;
-  border: 4px solid black;
-  box-shadow: 15px 15px 17px gray;
+  border: 1px solid black;
+  border-radius: 7px 7px;
+  box-shadow: 5px 5px 7px gray;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0em 0.5em 0em 0em;
+  border: unset;
 }
 
 #submit-button {
-  border-radius: 20px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, white, grey);
+  text-decoration: none;
+  font-family: verdana, sans-serif;
 }
 
-#link-container {
-  display: block;
-  margin-top: 4em;
-  text-align: center;
+#submit-button:hover {
+  background: darkblue;
+  transition: background 0.4s ease-out;
+  color: white;
+  font-weight: bold;
+  border: 1px white solid;
+}
+
+#submit-button:active {
+  box-shadow: 0 5px #666;
+  box-shadow: 5px 5px 7px black;
+  transform: translateY(4px);
+}
+
+.icon:hover {
+  transition: 0.4s;
+  transform: scale(1.2);
 }
 
 #profile-link {
-  margin-top: 3em;
-  background-color: silver;
-  border-radius: 20px;
-  border: 4px solid black;
-  box-shadow: 15px 15px 17px gray;
-  padding: 0.2em;
+  margin-top: 1em;
+  margin-left: 1em;
   color: black;
   font-weight: bold;
   font-size: 2.5em;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/*    User Story #9: My portfolio should have at least one media query. */
-@media (max-width: 800px) {
+#imprint {
+  padding: 5em;
+  font-size: 0.5em;
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    padding-top: 1em;
+    font-size: 1.2em;
+  }
+}
 
-  #navbar {
-    position: fixed;
+#ahaf-cookie {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, white, lightgray);
+  padding: 14px;
+  font-size: 10px;
+  font-family: verdana;
+}
+
+#ahaf-cookie a.button {
+  cursor: pointer;
+  background: #ccc;
+  padding: 6px 14px;
+  margin-left: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  float: right;
+}
+
+#ahaf-cookie a.button:hover {
+  background-color: #aaa;
+}
+
+#ahaf-cookie p.cookiemessage {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+
+@media only screen and (max-width: 1600px){
+
+.grid-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 75px;
+}
+
+.flip-card{
+    background-color: transparent;
+    width: 25vw;
+    height: 15vw;
+    perspective: 2000px;
+}
+
+.image-project{
+    width: 25vw;
+    height: 15vw;
+}
+
+
+@media only screen and (max-width: 1150px){
+
+    #welcome-section{
+        width: 100%;
+        padding-top: 10vh;
+        padding-bottom: 2vh;
+    }
+
+    #projects {
+        width: 100%;
+    }
+
+    .grid-projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .flip-card{
+        width: 39vw;
+        height: 24vw;
+    }
+
+    .flip-card-back{
+        line-height: 1.7;
+    }
+
+    .image-project{
+        width: 39vw;
+        height: 24vw;
+    }
+
+    #profile-link {
+      margin-top: 2em;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+  html {
+    width: 100%;
+    min-width: 250px;
+    margin: unset;
+    padding: unset;
+  }
+
+  nav {
+      width: 100vw;
+  }
+
+  ul {
+      width: 100vw;
+      display: none;
+  }
+
+  ul li{
+      width: 100vw;
+      display: block;
+      text-align: center;
+      margin-left: -3.5%;
+  }
+
+  .toggle{
+      width: 100vw;
+      display: block;
+      cursor: pointer;
+  }
+
+  .menu-closed {
     display: block;
-    width: 100%;
-    padding: 0.2em;
-    top: 0px;
-    width: 100%;
-    font-family: McLaren, arial;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
+  }
+
+  .menu-open {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+
+  #welcome-section{
+    width: 100vw;
+    padding-bottom: 1em;
+  }
+
+  #projects {
+      width: 100vw;
+      padding-top: 0.5em;
+  }
+
+  .grid-projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 70px;
+  }
+
+  .flip-card{
+      width: 70vw;
+      height: 45vw;
+  }
+
+  .flip-card-back{
+      line-height: 1.2;
+  }
+
+  .image-project{
+      width: 70vw;
+      height: 45vw;
   }
 
   #welcome-section {
     display: block;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    background-color: white;
+    height: auto;
+    padding-top: 2.5em;
     text-align: center;
+  }
+
+  h1 {
+    padding: 0.5em;
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  #pic {
+    width: 100vw;
+    margin: auto;
+    margin-top: 2em;
+    padding: unset;
+    height: auto;
   }
 
   #mypicture {
-    display: inline-block;
-    margin: 3em;
-    margin-bottom: 6em;
-    width: 15em;
-  }
-
-  .grid-projects {
-    display: inline-block;
-    padding-top: 20em;
-    width: 70%;
-    height: auto;
-    margin-left: 15%;
+    display: block;
+    margin: unset;
+    padding: unset;
+    margin: auto;
+    margin-top: unset;
   }
 
   #profile-link {
-    display: inline-block;
-    max-width: 80%;
-    justify-content: center;
-    text-align: center;
-    text-decoration: underline;
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    max-width: 70%;
+    text-decoration: none;
   }
 
   h2 {
     padding-top: 2em;
   }
 
+  h4 {
+    text-align: center;
+    padding-top: 0.5em;
+    font-family: Lato;
+    font-weight: bolder;
+  }
+
+  #link-container {
+    margin-top: 4em;
+    margin-bottom: 0.5em;
+  }
+
   #contact {
     display: block;
-    width: 100%;
+    width: 91.5vw;
+    padding: 0.5em;
     text-align: center;
     justify-content: center;
     font-size: 1.8em;
@@ -235,7 +553,7 @@ h2 {
   #submit-button {
     margin: 0.4em;
     font-size: 0.8em;
-    width: 70%;
+    width: 18rem;
   }
 
   #submit-button {
@@ -245,4 +563,12 @@ h2 {
     font-weight: bold;
     font-size: 1em;
    }
+
+  #ahaf-cookie {
+  font-size: 6px;
+  }
+
+  #ahaf-cookie {
+    width: 91.5vw;
+  }
 }

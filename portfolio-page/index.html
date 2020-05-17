@@ -1,89 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script type="cookieScript.js"></script>
+
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="portfolio-design.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ahaf82-Portfolio</title>
-  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/afca3add26.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_ekInsdslgmNikRep7KgS9");
+    })();
+  </script>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact_form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // generate the contact number value
+        emailjs.sendForm('gmail', 'contact_form', this);
+        document.getElementById('contact_form').reset();
+      });
+    }
+  </script>
+
+
+  <link rel="stylesheet" href="portfolio-design.css">
+  <title>ahaf dev</title>
+
 </head>
 
 <body>
   <header>
-    <!--    User Story #6: My portfolio should have a navbar with an id of navbar.-->
+
     <nav id="navbar">
-      <!--    User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page.-->
-      <a href="#welcome-section">About</a>
-      <a href="#tribute-page">My Portfolio</a>
-      <a href="#footer-title">Contact</a>
+        <div class="toggle">
+          <div class="menu-closed">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+          </div>
+          <div class="menu-open">
+              <i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+        <ul>
+            <li><a class="item-li" href="#welcome">Welcome</a></li>
+            <li><a class="item-li" href="#second-page">My Portfolio</a></li>    <!-- projects -->
+            <li><a class="item-li" href="#third-page">Contact</a></li>          <!-- tools -->
+        </ul>
     </nav>
+
   </header>
 
-  <!--    User Story #1: My portfolio should have a welcome section with an id of welcome-section.-->
-  <section id="welcome-section">
-    <!--    User Story #2: The welcome section should have an h1 element that contains text.-->
-    <h1>Armin Hafner</h1>
-    <p>Hello everybody,</p>
-    <p>this is my first portfolio on the way of learning Full Stack Web Development on Freecodecamp.</p>
-    <img id="mypicture" src="pictures/armin.jpg">
+  <div id="first-page">
+    <section id="welcome">
+      <h1>Hello dear visitor,</h1>
+      <p>my name is Armin. I'm 37 years old, father of two wild ones, coding fanatic - constantly learning and improving my coding skills.</p>
+      <p> Don't hesitate to take a look at the projects I have made so far</p>
+      <img id="mypicture" src="http://ahaf-dev.com/pictures/armin.jpg">
+    </section>
+  </div>
+
+  <div id="second-page">
+    <section id="projects">
+      <div class="grid-projects">
+
+        <!-- Contact Keeper -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="contactKeeper" class="flip-card-front">
+              <img src="./pictures/contact-keeper.PNG" class="image-project" alt="Pomodoro Clock">
+            </div>
+            <div class="flip-card-back">
+              <h4>Contact Keeper</h4>
+              <a href="https://whispering-beyond-93722.herokuapp.com" class="button-project" target="_blank">
+                View project from Udemy Course
+              </a>
+              <a href="https://github.com/ahaf82/contact-keeper" class="button-project" target="_blank">
+                View Code on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- JavaScript Calculator -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="javascriptCalculator" class="flip-card-front">
+              <img src='./pictures/javacalc-favicon.png' class="image-project" alt="JavaScript Calculator">
+            </div>
+            <div class="flip-card-back">
+              <h4>JavaScript Calculator</h4>
+              <a href="https://ahaf82.github.io/javascript-calculator" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://github.com/ahaf82/javascript-calculator" class="button-project" target="_blank">
+                View Code on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drum Machine -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="drumMachine" class="flip-card-front">
+              <img src='./pictures/DrumMachine.png' class="image-project" alt="Drum Machine">
+            </div>
+            <div class="flip-card-back">
+              <h4>Drum Machine</h4>
+              <a href="https://ahaf82.github.io/drum-machine" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://github.com/ahaf82/drum-machine" class="button-project" target="_blank">
+                View Code on GitHub
+              </a>
+              <p>Udemy Course</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pomodoro Clock -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="pomodoroClock" class="flip-card-front">
+              <img src='./pictures/pomodoroClock.png' class="image-project" alt="Pomodoro Clock">
+            </div>
+            <div class="flip-card-back">
+              <h4>Pomodoro Clock</h4>
+              <a href="https://ahaf82.github.io/pomodoro-clock" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://github.com/ahaf82/pomodoro-clock" class="button-project" target="_blank">
+                View Code on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Markdown Previewer -->
+        <!--        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="markdownPreviewer" class="flip-card-front">
+              <img src="https://codepen.io/ahaf82/pen/PoqpYXY/image/small.png" class="image-project" alt="Markdown Previewer">
+            </div>
+            <div class="flip-card-back">
+              <h4>Markdown Previewer</h4>
+              <a href="https://ahaf82.github.io/markdown-previewer" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://github.com/ahaf82/markdown-previewer" class="button-project" target="_blank">
+                View Code on GitHub
+              </a>
+            </div>
+          </div>
+        </div>    -->
+        
+        <!-- Choropleth Map -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="choroplethMap" class="flip-card-front">
+              <img src='./pictures/choroplethMap.PNG' class="image-project" alt="Random Quote Machine">
+            </div>
+            <div class="flip-card-back">
+              <h4>Choropleth Map</h4>
+              <a href="https://codepen.io/ahaf82/full/MWwqOXb" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://codepen.io/ahaf82/pen/MWwqOXb" class="button-project" target="_blank">
+                View Code on CodePen
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="flip-card project-tile">
+          <div class="flip-card-inner">
+            <div id="barChart" class="flip-card-front">
+              <img src='./pictures/barChart.PNG' class="image-project" alt="Random Quote Machine">
+            </div>
+            <div class="flip-card-back">
+              <h4>Bar Chart</h4>
+              <a href="https://codepen.io/ahaf82/full/PoqpYXY" class="button-project" target="_blank">
+                View project
+              </a>
+              <a href="https://codepen.io/ahaf82/pen/PoqpYXY" class="button-project" target="_blank">
+                View Code on CodePen
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+    </section>
+
+    <section id="linked-projects">
+      <div id="link-container">
+        <span id="visit">Visit me on:  </span>
+        <a id="profile-link" href="https://www.freecodecamp.org/fccfa7e2daf-b7b3-4518-a017-cb9ca52f07b4" target="_blank"><i class="fa fa-free-code-camp icon"></i></a>
+        <a id="profile-link" href="https://codepen.io/ahaf82" target="_blank"><i class="fa fa-codepen icon"></i></a>
+        <a id="profile-link" href="https://github.com/ahaf82" target="_blank"><i class="fa fa-github icon"></i></a>
+      </div>
   </section>
+  </div>
 
-  <!--    User Story #3: My portfolio should have a projects section with an id of projects.-->
-  <section id="projects">
-    <div class="grid-projects">
-      <!--    User Story #4: The projects section should contain at least one element with a class of project-tile to hold a project.-->
-      <!--    User Story #5: The projects section should contain at least one link to a project.-->
-      <div id="tribute-page">
-        <a href="tribute.html" class="project-tile" target="_blank">
-              <img src="pictures/Andreas-Hofer-3.jpg" alt="Tribute Andreas Hofer">
-            </a>
+
+  <div id="third-page">
+    <footer id="contact">
+      <form id="contact_form" class="submit-form">
+        <h2 id="footer-title">Contact me:</h2>
+        <label for="name-input"> Name: <br>
+              <input id="name-input" type="text" name="user_name" placeholder="Please enter your name" required>
+            </label>
+        <br>
+        <label for="email-input"> E-Mail: <br>
+              <input id="email-input" type="email" name="user_email" placeholder="Your email address" required>
+            </label>
+        <br>
+        <textarea id="message" name="message" rows="8" columns="160" placeholder="Your message:"></textarea>
+        <br>
+        <input id="submit-button" type="submit" href="javascript:;" name="submit" value="Send">
+      </form>
+      <div class="alert alert-primary" id="success-alert">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <strong>Success! </strong> Thank you for your mail!.
       </div>
-      <div id="survey-form">
-        <a href="survey.html" class="project-tile" target="_blank">
-              <img src="pictures/survey.jpg" alt="Survey Form">
-            </a>
+
+
+
+
+      <div id="imprint">
+        <h2>Legal Disclosure</h2>
+        Information in accordance with Section 5 TMG
+        <br><br>Dreihügelstraße 59a<br>44805 Bochum<br>
+        <h2>Contact Information</h2>
+        E-Mail: <a href="mailto:info@ahaf-dev.com">info@ahaf-dev.com</a><br>Internet address: <a href="ahaf-dev.com" target="_blank">ahaf-dev.com</a><br>
+        <h2>Graphics and Image Sources</h2>
+        Photo by Matthijs Smit on Unsplash<br />
+        Photo by John Moeses Bauan on Unsplash<br><br>
+        <h2>Disclaimer</h2>
+        Accountability for content<br>
+        The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents'
+        accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for
+        our own content on these web pages. In this matter, please note that we are not obliged to monitor
+        the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity.
+        Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per
+        §§ 8 to 10 of the Telemedia Act (TMG).
+
+        <br><br>Accountability for links<br>
+        Responsibility for the content of
+        external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were
+        evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective
+        link immediately.<br><br>Copyright<br> Our web pages and their contents are subject to German copyright law. Unless
+        expressly permitted by law, every form of utilizing, reproducing or processing
+        works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights.
+        Individual reproductions of a work are only allowed for private use.
+        The materials from these pages are copyrighted and any unauthorized use may violate copyright laws.
+
+        <br><br>
+        <i>Quelle: </i><a href="http://www.translate-24h.de" target="_blank">Übersetzungsbüro translate-24h.de</a> <br><br>
       </div>
-      <div id="product-page">
-        <a href="landing-page.html" class="project-tile" target="_blank">
-              <img src="pictures/wonka-bar.jpg" alt="Landing Page">
-            </a>
-      </div>
-      <div id="technical-documentation">
-        <a href="technical-doc.html" class="project-tile" target="_blank">
-              <img src="pictures/sql.webp" alt="Technical Documentation SQL">
-            </a>
-      </div>
-    </div>
-  </section>
 
-  <section id="linked-projects">
-    <div id="link-container">
-      <!--    User Story #8: My portfolio should have a link with an id of profile-link, which opens my GitHub or FCC profile in a new tab.-->
-      <a id="profile-link" href="https://www.freecodecamp.org/fccfa7e2daf-b7b3-4518-a017-cb9ca52f07b4" target="_blank">Show my FCC profile</a>
-      <div>
-  </section>
+    </footer>
+  </div>
 
-  <footer id="contact">
-    <form class="submit-form" action="#" method="post">
-      <h2 id="footer-title">Contact me:</h2>
-      <label for="name-input"> Name: <br>
-            <input id="name-input" type="name" name="name" placeholder="Please enter your name" required>
-          </label>
-      <br>
-      <label for="email-input"> E-Mail: <br>
-            <input id="email-input" type="email" name="email" placeholder="Your email address" required>
-          </label>
-      <br>
-      <textarea id="message" name="message" rows="8" columns="160">Your message:</textarea>
-      <br>
-      <input id="submit-button" type="submit" name="submit" value="Submit">
-    </form>
-
-  </footer>
-
+<!-- Cookie Banner Script Start -->
+  <div id="ahaf-cookie">
+    <a onClick="var d = new Date(); d = new Date(d.getTime() +1000*60*60*24*730); document.cookie = 'cookie=1; expires='+ d.toGMTString() + ';'; document.getElementById('ahaf-cookie').style.display = 'none';"   class="button">Accept</a>
+    <p class="cookiemessage">This website is using cookies. We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we will assume that you are happy to receive all cookies on this website.
+    <a href="#imprint">Find out more</a></p>
+  </div>
 </body>
+<script src="navigation.js"></script>
 
 </html>
