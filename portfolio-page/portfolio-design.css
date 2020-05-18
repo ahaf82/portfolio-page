@@ -111,6 +111,7 @@ p {
 }
 
 #second-page {
+  margin-top: 23em;
   padding-top: 15vh;
   padding-bottom: 8vh;
   text-align: center;
@@ -448,9 +449,10 @@ a {
     display: block;
   }
 
-  #welcome-section{
+  #welcome{
+    display: block;
     width: 100vw;
-    padding-bottom: 1em;
+    height: auto;
   }
 
   #projects {
@@ -479,11 +481,18 @@ a {
       height: 45vw;
   }
 
-  #welcome-section {
+  #first-page {
+    display: flow-root;
+    height: auto;
+    margin-bottom: 0.1em;
+  }
+
+  #welcome {
     display: block;
     background-color: white;
     height: auto;
     padding-top: 2.5em;
+    margin-bottom: 1.5em;
     text-align: center;
   }
 
@@ -512,18 +521,20 @@ a {
     padding: unset;
     margin: auto;
     margin-top: unset;
+    margin-bottom: 1.5em;
+  }
+
+ #second-page {
+    display: block;
+    height: auto;
+    margin-top: 0.3em;    
   }
 
   #profile-link {
-    display: block;
     margin: auto;
     margin-top: 1em;
     max-width: 70%;
     text-decoration: none;
-  }
-
-  h2 {
-    padding-top: 2em;
   }
 
   h4 {
